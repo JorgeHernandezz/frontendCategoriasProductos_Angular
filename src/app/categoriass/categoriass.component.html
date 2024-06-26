@@ -1,0 +1,42 @@
+<div class="mt-3"></div>
+<div class="container">
+  <div class="card border-primary text-center">
+    <div class="card-header text-primary">
+      <h1 class="card-title text-center text-primary">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary border-primary">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>idCategoria</th>
+            <th>nombreCategoria</th>
+            <th>descripcionCategoria</th>
+            <th>fechacreacion</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of listaCategorias">
+            <td>{{ c.idcategoria }}</td>
+            <td>{{ c.nombrecategoria }}</td>
+            <td>{{ c.descripcioncategoria }}</td>
+            <td>{{ c.fechacreacion }}</td>
+            <td>
+              <button type="button" class="btn btn-outline-success btn-sm" (click)="update(c)">
+                Actualizar
+              </button>
+              <button class="btn btn-outline-danger btn-sm" type="button" (click)="eliminar(c)">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-outline-primary btn-sm" (click)="agregar()">
+        Agregar
+      </button>
+    </div>
+  </div>
+</div>

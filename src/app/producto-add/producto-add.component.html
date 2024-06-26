@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Agregar Producto</h1>
+  <form (ngSubmit)="agregarProducto()">
+    <div class="form-group">
+      <label>Nombre:</label>
+      <input type="text" class="form-control" [(ngModel)]="nuevoProducto.nombreproducto" name="nombre" required>
+    </div>
+
+    <div class="form-group">
+      <label>Descripción:</label>
+      <textarea class="form-control" [(ngModel)]="nuevoProducto.descripcionproducto" name="descripcion" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Existencia:</label>
+      <input type="number" class="form-control" [(ngModel)]="nuevoProducto.existencia" name="existencia" required>
+    </div>
+
+    <div class="form-group">
+      <label>Precio:</label>
+      <input type="number" class="form-control" [(ngModel)]="nuevoProducto.precio" name="precio" required>
+    </div>
+
+    <div class="form-group">
+      <label>Categoría:</label>
+      <select class="form-control" [(ngModel)]="nuevoProducto.idcategoria" name="idcategoria" required>
+        <option *ngFor="let categoria of categorias" [ngValue]="{ 'idcategoria': categoria.idcategoria }">{{ categoria.nombrecategoria }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Agregar</button>
+      <button type="button" class="btn btn-secondary" (click)="cerrarDialog()">Cancelar</button>
+    </div>
+  </form>
+</div>

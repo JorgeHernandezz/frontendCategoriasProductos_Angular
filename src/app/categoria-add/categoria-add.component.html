@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Agregar Categoría</h1>
+    <form (ngSubmit)="agregarCategoria(categoriaForm)" #categoriaForm="ngForm">
+      <div class="form-group">
+        <label>Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="nombre"
+          [(ngModel)]="categoria.nombrecategoria"
+          #nombre="ngModel"
+          required
+        />
+        <div *ngIf="nombre.invalid && nombre.touched" class="text-danger">
+          El nombre es requerido
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Descripción:</label>
+        <textarea
+          class="form-control"
+          name="descripcion"
+          [(ngModel)]="categoria.descripcioncategoria"
+          #descripcion="ngModel"
+          required
+        ></textarea>
+        <div *ngIf="descripcion.invalid && descripcion.touched" class="text-danger">
+          La descripción es requerida
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Fecha de Creación:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="fechacreacion"
+          [(ngModel)]="categoria.fechacreacion"
+          readonly
+        />
+      </div>
+  
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="categoriaForm.invalid"
+        >
+          Agregar
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="cerrarDialog()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  

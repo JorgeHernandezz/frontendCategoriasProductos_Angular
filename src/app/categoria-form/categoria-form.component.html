@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Actualizar Categoría</h1>
+    <form (ngSubmit)="actualizarCategoria()">
+      <div class="form-group">
+        <label>ID:</label>
+        <input type="text" class="form-control" readonly [(ngModel)]="data.categoria.idcategoria" name="id">
+      </div>
+  
+      <div class="form-group">
+        <label>Nombre:</label>
+        <input type="text" class="form-control" [(ngModel)]="data.categoria.nombrecategoria" name="nombre">
+      </div>
+  
+      <div class="form-group">
+        <label>Descripción:</label>
+        <textarea class="form-control" [(ngModel)]="data.categoria.descripcioncategoria" name="descripcion"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label>Fecha de Creación:</label>
+        <input type="text" class="form-control" readonly [(ngModel)]="data.categoria.fechacreacion" name="fechaCreacion">
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="button" class="btn btn-secondary" (click)="cerrarDialog()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  
