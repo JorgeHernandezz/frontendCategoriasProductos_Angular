@@ -98,6 +98,15 @@ export class CategoriassComponent implements OnInit {
     });
   }
 
+
+  
+  descargarPDF(): void {
+    const url = 'https://backend-categoriasproductos-springboot.onrender.com/api/categorias/reporte';
+    window.open(url, '_blank');
+  }
+
+
+
   eliminar(categoria: Categoria): void {
     Swal.fire({
       title: '¿Está seguro?',
